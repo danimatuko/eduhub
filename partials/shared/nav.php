@@ -1,3 +1,5 @@
+<?php require get_template_directory() . "/BootstrapWalker.php" ?>
+
 <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close">
@@ -8,41 +10,24 @@
 </div>
 
 
-<nav class="site-nav">
+<nav class="site-nav mt-5">
     <div class="container">
         <div class="menu-bg-wrap">
             <div class="site-navigation">
                 <div class="row g-0 align-items-center">
                     <div class="col-2">
-                        <a href="<?php echo home_url() ?>" class="logo m-0 float-start">Financing<span
+                        <a href="<?php echo home_url() ?>" class="logo m-0 float-start">Dynamic<span
                                 class="text-primary">.</span></a>
                     </div>
                     <div class="col-8 text-center ">
-                        <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li class="has-children">
-                                <a href="financing.html">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="<?php echo site_url("/about-us")  ?>">About Us</a></li>
-                                    <li><a href="single.html">Blog Single</a></li>
-                                    <li><a href="case-study.html">Case Study Detail</a></li>
-                                    <li><a href="#">Menu One</a></li>
-                                    <li><a href="#">Menu Two</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Dropdown</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Sub Menu One</a></li>
-                                            <li><a href="#">Sub Menu Two</a></li>
-                                            <li><a href="#">Sub Menu Three</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul>
+                        <?php wp_nav_menu(
+                            array(
+                                'container' => '',
+                                'menu_class' => "js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto",
+                                'depth' => 3,
+                                'walker' => new BootstrapWalker()
+                            )
+                        ) ?>
                     </div>
                     <div class="col-2 text-end">
                         <a href="#"

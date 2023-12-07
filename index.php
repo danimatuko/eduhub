@@ -1,6 +1,8 @@
 <?php get_header() ?>
 
-<?php get_template_part("partials/shared/nav") ?>
+<?php get_template_part("partials/shared/nav"); ?>
+<?php get_template_part("partials/shared/bootnav"); ?>
+
 
 <div class="hero overlay">
     <img src="<?php echo get_theme_file_uri("/images/blob.svg") ?>" alt="" class="img-fluid blob">
