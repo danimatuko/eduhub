@@ -19,7 +19,7 @@
                 <?php if (is_single()) : ?>
                     <p data-aos="fade-up" class="meta">
                         Posted by
-                        <a href="#"><?php get_the_author() ?></a>
+                        <a href="#"><?php the_author() ?></a>
                         &bullet; on <a href="#"><?php echo get_the_date('M d, Y'); ?></a>
                     </p>
                 <?php endif ?>

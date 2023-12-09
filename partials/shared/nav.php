@@ -16,8 +16,7 @@
             <div class="site-navigation">
                 <div class="row g-0 align-items-center">
                     <div class="col-2">
-                        <a href="<?php echo home_url() ?>" class="logo m-0 float-start">Dynamic<span
-                                class="text-primary">.</span></a>
+                        <a href="<?php echo home_url() ?>" class="logo m-0 float-start"><?php echo bloginfo("name") ?><span class="text-primary">.</span></a>
                     </div>
                     <div class="col-8 text-center ">
                         <?php wp_nav_menu(
@@ -31,8 +30,7 @@
                         ) ?>
                     </div>
                     <div class="col-2 text-end">
-                        <a href="#"
-                            class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                        <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
                             <span></span>
                         </a>
 

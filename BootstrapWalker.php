@@ -39,9 +39,17 @@ class BootstrapWalker extends Walker_Nav_Menu
         // Check if the current item has sub-items
         $has_children = in_array('menu-item-has-children', $item->classes);
 
+        // Check if the current item is active
+        $is_active = in_array('current-menu-item', $item->classes);
+
         // Add a custom class if the item has sub-items
         if ($has_children) {
             $classes[] = 'has-children';
+        }
+
+        // Add a custom class if the item is active
+        if ($is_active) {
+            $classes[] = 'active';
         }
 
         // Create a string of HTML classes for the menu item
