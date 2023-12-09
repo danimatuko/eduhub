@@ -10,7 +10,7 @@
 </div>
 
 
-<nav class="site-nav mt-5">
+<nav class="site-nav">
     <div class="container">
         <div class="menu-bg-wrap">
             <div class="site-navigation">
@@ -22,6 +22,7 @@
                     <div class="col-8 text-center ">
                         <?php wp_nav_menu(
                             array(
+                                'theme_location' => 'primary-menu',
                                 'container' => '',
                                 'menu_class' => "js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto",
                                 'depth' => 3,

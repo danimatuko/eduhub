@@ -79,3 +79,22 @@ function theme_register_menus()
 }
 
 add_action('after_setup_theme', 'theme_register_menus');
+
+
+
+
+
+
+function custom_eduhub_setup()
+{
+    // Add theme support for post thumbnails
+    add_theme_support('post-thumbnails');
+
+    // Add theme support for automatic title tag
+    add_theme_support('title-tag');
+
+    // Add theme support for HTML5 features
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+}
+
+add_action('after_setup_theme', 'custom_eduhub_setup');
