@@ -18,6 +18,7 @@ function eduhub_university_post_types()
         'labels'       => $labels,
         'rewrite'      => ['slug' => 'events'],
         'menu_icon'    => 'dashicons-calendar-alt',
+        'supports'     => ['title', 'editor', 'excerpt']
 
     ];
 
