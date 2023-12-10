@@ -40,6 +40,8 @@
                         echo '404 - Page Not Found';
                     } elseif (is_home()) {
                         echo 'Blog';
+                    } elseif (is_post_type_archive()) {
+                        post_type_archive_title();
                     }
                     ?>
                 </h1>

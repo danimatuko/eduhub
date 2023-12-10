@@ -14,7 +14,9 @@ function eduhub_university_post_types()
     $args = [
         'public'       => true,
         'show_in_rest' => true,
+        'has_archive'  => true,
         'labels'       => $labels,
+        'rewrite'      => ['slug' => 'events'],
         'menu_icon'    => 'dashicons-calendar-alt',
 
     ];

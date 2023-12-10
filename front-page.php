@@ -4,47 +4,9 @@
 
 <?php get_template_part("partials/shared/hero") ?>
 
+<?php get_template_part("partials/events") ?>
 
-<div class="section">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <img src="<?php echo get_theme_file_uri("images/img-3.jpg") ?>" alt="Image" class="img-fluid rounded
-					">
-            </div>
-            <div class="col-lg-4 ps-lg-2">
-                <div class="mb-5">
-                    <h2 class="text-black h4">Make payment fast and smooth.</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                        there live the blind texts.</p>
-                </div>
-                <div class="d-flex mb-3 service-alt">
-                    <div>
-                        <span class="bi-wallet-fill me-4"></span>
-                    </div>
-                    <div>
-                        <h3>Build financial</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
-                    </div>
-                </div>
 
-                <div class="d-flex mb-3 service-alt">
-                    <div>
-                        <span class="bi-pie-chart-fill me-4"></span>
-                    </div>
-                    <div>
-                        <h3>Invest for the future</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <div class="section sec-features">
     <div class="container">
@@ -220,8 +182,7 @@
 </div>
 
 
-<div class="section sec-cta overlay"
-    style="background-image: url('<?php echo get_theme_file_uri("images/img-3.jpg") ?>')">
+<div class="section sec-cta overlay" style="background-image: url('<?php echo get_theme_file_uri("images/img-3.jpg") ?>')">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-5" data-aos="fade-up" data-aos-delay="0">
@@ -333,8 +294,7 @@
             <div class="testimonial-slider" id="testimonial-slider">
                 <div class="item">
                     <div class="testimonial-half d-lg-flex bg-white">
-                        <div class="img"
-                            style="background-image: url('<?php echo get_theme_file_uri("/images/img-4.jpg") ?>')">
+                        <div class="img" style="background-image: url('<?php echo get_theme_file_uri("/images/img-4.jpg") ?>')">
 
                         </div>
                         <div class="text">
@@ -353,8 +313,7 @@
 
                 <div class="item">
                     <div class="testimonial-half d-lg-flex bg-white">
-                        <div class="img"
-                            style="background-image: url('<?php echo get_theme_file_uri("/images/img-3.jpg") ?>')">
+                        <div class="img" style="background-image: url('<?php echo get_theme_file_uri("/images/img-3.jpg") ?>')">
 
                         </div>
                         <div class="text">
@@ -373,8 +332,7 @@
 
                 <div class="item">
                     <div class="testimonial-half d-lg-flex bg-white">
-                        <div class="img"
-                            style="background-image: url('<?php echo get_theme_file_uri("/images/img-2.jpg") ?>')">
+                        <div class="img" style="background-image: url('<?php echo get_theme_file_uri("/images/img-2.jpg") ?>')">
 
                         </div>
                         <div class="text">
