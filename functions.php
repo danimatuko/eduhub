@@ -98,3 +98,7 @@ function custom_eduhub_setup()
 }
 
 add_action('after_setup_theme', 'custom_eduhub_setup');
+
+
+
+require "inc/custom-post-types/university-post-types.php";
