@@ -24,7 +24,6 @@ if ($events->have_posts()) : ?>
                             live the blind texts.</p>
                     </div>
                     <?php while ($events->have_posts()) : $events->the_post(); ?>
-
                         <div class="d-flex mb-3 service-alt">
                             <div>
                                 <span class="bi-wallet-fill me-4"></span>
@@ -33,6 +32,10 @@ if ($events->have_posts()) : ?>
                                 <h3>
                                     <a class="text-dark" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                                 </h3>
+                                <div class="mb-1">
+                                    <span class="font-monospace text-secondary"><?php echo get_field('event_date') ?>
+                                    </span>
+                                </div>
                                 <p><?php echo wp_trim_words(get_the_content(), 18); ?></p>
                             </div>
                         </div>
