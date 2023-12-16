@@ -1,8 +1,7 @@
 <?php
+require_once "inc/custom-post-types/university-post-types.php";
 
-
-function enqueue_eduhub_styles()
-{
+function eduhub_enqueue_styles() {
     // Google Fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
 
@@ -31,13 +30,9 @@ function enqueue_eduhub_styles()
     wp_enqueue_style('flatpickr', get_template_directory_uri() . '/css/flatpickr.min.css');
 }
 
-// Hook the function to the wp_enqueue_scripts action
-add_action('wp_enqueue_scripts', 'enqueue_eduhub_styles');
+add_action('wp_enqueue_scripts', 'eduhub_enqueue_styles');
 
-
-
-function enqueue_custom_scripts()
-{
+function eduhub_enqueue_scripts() {
     // Bootstrap Bundle
     wp_enqueue_script('bootstrap-bundle', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array('jquery'), '', true);
 
@@ -63,30 +58,19 @@ function enqueue_custom_scripts()
     wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', array(), '', true);
 }
 
-// Hook the function to the wp_enqueue_scripts action
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+add_action('wp_enqueue_scripts', 'eduhub_enqueue_scripts');
 
-
-
-
-function theme_register_menus()
-{
+function eduhub_theme_register_menus() {
     register_nav_menus(array(
-        'primary-menu' => __('Primary Menu', 'theme-textdomain'),
+        'primary-menu'   => __('Primary Menu', 'theme-textdomain'),
         'secondary-menu' => __('Secondary Menu', 'theme-textdomain'),
         // Add more menu locations as needed
     ));
 }
 
-add_action('after_setup_theme', 'theme_register_menus');
+add_action('after_setup_theme', 'eduhub_theme_register_menus');
 
-
-
-
-
-
-function custom_eduhub_setup()
-{
+function eduhub_custom_setup() {
     // Add theme support for post thumbnails
     add_theme_support('post-thumbnails');
 
@@ -97,8 +81,26 @@ function custom_eduhub_setup()
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 }
 
-add_action('after_setup_theme', 'custom_eduhub_setup');
+add_action('after_setup_theme', 'eduhub_custom_setup');
 
 
+function eduhub_adjust_queries($query) {
+    if (!is_admin() && is_post_type_archive('event') && $query->is_main_query()) {
+        // Get today's date in 'Ymd' format
+        $today = date('Ymd');
 
-require "inc/custom-post-types/university-post-types.php";
+        $query->set('meta_key', 'event_date');
+        $query->set('orderby', 'meta_value_num');
+        $query->set('order', 'ASC');
+        $query->set('meta_query', [
+            [
+                'key'     => 'event_date',
+                'compare' => '>=',
+                'value'   => $today,
+                'type'    => 'numeric',
+            ],
+        ]);
+    }
+}
+
+add_action('pre_get_posts', 'eduhub_adjust_queries');
