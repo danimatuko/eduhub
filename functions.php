@@ -1,5 +1,5 @@
 <?php
-require_once "inc/custom-post-types/university-post-types.php";
+require 'lib/EduhubPostType.php';
 
 function eduhub_enqueue_styles() {
     // Google Fonts

@@ -34,10 +34,12 @@ if ($events_query->have_posts()) :
 
                 <div class="col-lg-4 ps-lg-2">
                     <div class="mb-5">
-                        <h2 class="text-black h4">Make payment fast and smooth.</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                            live the blind texts.</p>
+                        <h2 class="text-black h4">Upcoming Events</h2>
+                        <p>Journey into the realm of knowledge as we bring you upcoming events from our educational
+                            institution. Join us in the pursuit of wisdom, far beyond the word mountains, in lands distant
+                            from Vokalia and Consonantia.</p>
                     </div>
+
 
                     <?php
                     // Loop through each event

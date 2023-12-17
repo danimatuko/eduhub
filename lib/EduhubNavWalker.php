@@ -3,8 +3,7 @@
 /**
  * Custom WordPress navigation walker for Bootstrap styling.
  */
-class BootstrapWalker extends Walker_Nav_Menu
-{
+class EduhubNavWalker extends Walker_Nav_Menu {
     /**
      * Start the list before the elements are added.
      *
@@ -12,8 +11,7 @@ class BootstrapWalker extends Walker_Nav_Menu
      * @param int $depth Depth of menu item. Used for padding.
      * @param array|null $args Additional arguments.
      */
-    function start_lvl(&$output, $depth = 0, $args = null)
-    {
+    function start_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"dropdown\">\n";
     }
@@ -27,8 +25,7 @@ class BootstrapWalker extends Walker_Nav_Menu
      * @param array|null $args Additional arguments.
      * @param int $id Current menu item ID.
      */
-    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
-    {
+    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
         // Get the title and URL of the menu item
         $title = $item->title;
         $url = $item->url;
@@ -67,8 +64,7 @@ class BootstrapWalker extends Walker_Nav_Menu
      * @param int $depth Depth of menu item. Used for padding.
      * @param array|null $args Additional arguments.
      */
-    function end_lvl(&$output, $depth = 0, $args = null)
-    {
+    function end_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
     }
@@ -81,8 +77,7 @@ class BootstrapWalker extends Walker_Nav_Menu
      * @param int $depth Depth of menu item. Used for padding.
      * @param array|null $args Additional arguments.
      */
-    function end_el(&$output, $item, $depth = 0, $args = null)
-    {
+    function end_el(&$output, $item, $depth = 0, $args = null) {
         $output .= "</li>\n";
     }
 }

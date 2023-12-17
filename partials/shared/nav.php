@@ -1,4 +1,4 @@
-<?php require get_template_directory() . "/BootstrapWalker.php" ?>
+<?php require get_template_directory() . "/lib/EduhubNavWalker.php" ?>
 
 <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
@@ -25,7 +25,7 @@
                                 'container' => '',
                                 'menu_class' => "js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto",
                                 'depth' => 3,
-                                'walker' => new BootstrapWalker()
+                                'walker' => new EduhubNavWalker()
                             )
                         ) ?>
                     </div>
