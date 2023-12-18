@@ -28,10 +28,25 @@
                     <?php the_content() ?>
                 </article>
 
-                <div class="pt-5 categories_tags ">
-                    <p>Categories: <a href="#">Design</a>, <a href="#">Events</a> Tags: <a href="#">#html</a>, <a
-                            href="#">#trends</a></p>
+
+                <?php
+                
+                $relatedPrograms = get_field('related_programs');
+                $programLinks = array();
+
+                foreach ($relatedPrograms as $program) :
+                    $programLinks[] = '<a class="" href="' . get_the_permalink($program) . '">' . get_the_title($program) . '</a>';
+                endforeach;
+
+                if (!empty($programLinks)) :
+                ?>
+                <div class="pt-5 mb-3 categories_tags">
+                    <div>Program(s): <?php echo implode(', ', $programLinks); ?></div>
                 </div>
+                <?php endif; ?>
+
+
+
 
                 <div class="post-single-navigation d-flex align-items-stretch">
                     <a href="#" class="mr-auto w-50 pr-4">
